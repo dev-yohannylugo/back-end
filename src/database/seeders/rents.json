@@ -1,0 +1,32 @@
+[
+  {
+    "location": null,
+    "type": "Mobiliario",
+    "typeRent": "Por Hora",
+    "productId": 4
+  },
+  {
+    "location": "48.8583701/2.2944813",
+    "type": "Inmobiliario",
+    "typeRent": "Por Noche",
+    "productId": 5
+  },
+  {
+    "location": "27.1750151/78.0421552",
+    "type": "Inmobiliario",
+    "typeRent": "Por Noche",
+    "productId": 6
+  },
+  {
+    "location": null,
+    "type": "Mobiliario",
+    "typeRent": "Por Noche",
+    "productId": 10
+  },
+  {
+    "location": null,
+    "type": "Mobiliario",
+    "typeRent": "Por Hora",
+    "productId": 13
+  }
+]

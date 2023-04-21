@@ -1,0 +1,108 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Rent {
+  """primary key"""
+  id: Int!
+  location: String
+  typeRent: String!
+  type: String!
+  productId: Int!
+}
+
+"""The Product Model"""
+type Product {
+  """primary key"""
+  id: Int
+  code: String!
+  name: String!
+  description: String!
+  price: Float!
+  image: String!
+  seller: String!
+  type: String!
+  stock: Int
+  rent: Rent
+}
+
+type Reservation {
+  """primary key"""
+  id: Int!
+  date: String!
+  hour: String!
+  rentId: Int!
+}
+
+type Query {
+  products: [Product!]!
+  product(id: Int!): Product!
+  rents: [Rent!]!
+  rent(id: Int!): Rent!
+  reservations: [Reservation!]!
+  reservation(id: Int!): Reservation!
+  isAvailable(rentId: Int!, date: String!): Boolean!
+}
+
+type Mutation {
+  createProduct(createProductInput: CreateProductInput!): Product!
+  updateProduct(updateProductInput: UpdateProductInput!): Product!
+  removeProduct(id: Int!): Boolean!
+  createRent(createRentInput: CreateRentInput!): Rent!
+  updateRent(updateRentInput: UpdateRentInput!): Rent!
+  removeRent(id: Int!): Rent!
+  createReservation(createReservationInput: CreateReservationInput!): Reservation!
+  updateReservation(updateReservationInput: UpdateReservationInput!): Reservation!
+  removeReservation(id: Int!): Reservation!
+}
+
+input CreateProductInput {
+  code: String!
+  name: String!
+  description: String!
+  price: Float!
+  image: String!
+  seller: String!
+  type: String!
+  stock: Int
+}
+
+input UpdateProductInput {
+  code: String
+  name: String
+  description: String
+  price: Float
+  image: String
+  seller: String
+  type: String
+  stock: Int
+  id: Int!
+}
+
+input CreateRentInput {
+  location: String
+  typeRent: String!
+  type: String!
+  productId: Int!
+}
+
+input UpdateRentInput {
+  location: String
+  typeRent: String
+  type: String
+  productId: Int
+  id: Int!
+}
+
+input CreateReservationInput {
+  date: String!
+  hour: String!
+  rentId: Int!
+}
+
+input UpdateReservationInput {
+  date: String
+  hour: String
+  rentId: Int
+  id: Int!
+}
